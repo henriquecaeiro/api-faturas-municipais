@@ -201,30 +201,3 @@ real, altere o driver e configure somente variáveis de ambiente genéricas.
 ```
 
 Mais exemplos estão em [docs/api-examples.md](docs/api-examples.md).
-
-## Melhorias futuras
-
-- enviar filtros e paginação ao provider ERP, em vez de filtrar após a leitura;
-- executar sincronizações maiores com jobs e filas;
-- adicionar cache de consultas repetidas;
-- publicar um contrato OpenAPI/Swagger;
-- criar DTOs específicos para a fronteira com o ERP;
-- ampliar testes para falhas HTTP, paginação externa e concorrência;
-- substituir o PDF demonstrativo por um adapter de documentos, mantendo o modo mock;
-- criar uma camada de domínio própria caso as regras de cobrança voltem a crescer.
-
-Como Laravel 5.7 e parte de seu ecossistema estão fora de suporte, o Composer
-pode reportar advisories de segurança em dependências históricas. Para uso além
-do showcase, a prioridade deve ser migrar o framework e atualizar essas
-bibliotecas antes de expor a aplicação à internet.
-
-Na revisão feita em 10 de junho de 2026, `composer audit --locked --no-dev`
-reportou 14 advisories em 5 pacotes do stack legado. O repositório deve ser
-tratado como demonstração técnica local, não como base pronta para produção.
-
-## Revisão antes de publicar
-
-Antes de subir este repositório, execute os passos de
-[docs/security-and-anonymization.md](docs/security-and-anonymization.md). Em
-especial, confirme que nenhum `.env`, planilha, dump, log, arquivo de IDE ou
-histórico Git do projeto corporativo foi copiado junto.
